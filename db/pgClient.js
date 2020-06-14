@@ -28,7 +28,7 @@ export async function getPgClient () {
     try {
       await client.connect()
       isConnected = true
-      global.logger.info('Database Connected using node-postgres')
+      global.logger.info('DB Connected')
     } catch (err) {
       global.logger.err(err.stack)
     }
