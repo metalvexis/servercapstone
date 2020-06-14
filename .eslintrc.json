@@ -17,5 +17,5 @@
   },
   "rules": {
   },
-  "ignorePatterns": [".dist/*"]
+  "ignorePatterns": [".dist/*", "./db/migration/*"]
 }

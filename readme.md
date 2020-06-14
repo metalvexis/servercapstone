@@ -26,12 +26,7 @@
 
 - Execute a migration
   ```
-  yarn migrate:up [filename]
-  ```
-
-- Execute all migration
-  ```
-  yarn migrate:up [filename]
+  yarn migrate:up [filename] [-c 21]
   ```
 
 - Reset all migration

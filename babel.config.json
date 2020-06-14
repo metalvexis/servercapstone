@@ -14,7 +14,8 @@
   "ignore": [
     "node_modules",
     ".dist",
-    ".yarn"
+    ".yarn",
+    "db/migration/*"
   ],
   "plugins": [
     ["module-resolver", {

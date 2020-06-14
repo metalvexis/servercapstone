@@ -8,8 +8,7 @@
     "start": "nodemon --delay 2 --watch . --exec \"npm run build && node ./.dist\" ",
     "eslint:fix-dry-run": "./node_modules/.bin/eslint --fix-dry-run --format=table . | cat",
     "migrate:create": "node_modules/db-migrate/bin/db-migrate -m db/migration create --",
-    "migrate:up": "node_modules/db-migrate/bin/db-migrate -m db/migration --",
-    "migrate:up:all": "node_modules/db-migrate/bin/db-migrate -m db/migration up:all",
+    "migrate:up": "node_modules/db-migrate/bin/db-migrate -m db/migration up --",
     "migrate:reset": "node_modules/db-migrate/bin/db-migrate -m db/migration reset"
   },
   "repository": {
