@@ -6,7 +6,11 @@
   "scripts": {
     "build": "rm -rf .dist && ./node_modules/.bin/babel --config-file ./babel.config.json . -d .dist/ --ignore 'node_modules/*'",
     "start": "nodemon --delay 2 --watch . --exec \"npm run build && node ./.dist\" ",
-    "eslint:fix-dry-run": "./node_modules/.bin/eslint --fix-dry-run --format=table . | cat"
+    "eslint:fix-dry-run": "./node_modules/.bin/eslint --fix-dry-run --format=table . | cat",
+    "migrate:create": "node_modules/db-migrate/bin/db-migrate -m db/migration create --",
+    "migrate:up": "node_modules/db-migrate/bin/db-migrate -m db/migration --",
+    "migrate:up:all": "node_modules/db-migrate/bin/db-migrate -m db/migration up:all",
+    "migrate:reset": "node_modules/db-migrate/bin/db-migrate -m db/migration reset"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,8 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "date-fns": "^1.30.1",
+    "db-migrate": "^0.11.11",
+    "db-migrate-pg": "^1.2.2",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-list-endpoints": "^4.0.1",
