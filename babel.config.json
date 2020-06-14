@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "sourceMaps": true,
+  "retainLines": true,
+  "ignore": [
+    "node_modules",
+    ".dist",
+    ".yarn"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"]
+    }]
+  ]
+}
