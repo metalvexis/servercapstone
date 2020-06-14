@@ -1,6 +1,6 @@
 import express from 'express'
 
-import {  } from 'route/'
+// import {  } from 'route/'
 
 const router = express.Router()
 
@@ -10,6 +10,10 @@ router.all('/', (req, res) => {
 
 router.all('/FAIL', (req, res, next) => {
   next(new Error('TEST'))
+})
+
+router.all('/SUCCESS', (req, res, next) => {
+  res.sendStatus(200)
 })
 
 export default router

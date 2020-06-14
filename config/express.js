@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import { ErrorHandler } from 'middleware/ErrorHandler.js'
+import { errorHandler } from 'middleware/errorHandler.js'
 import apiRoutes from './routes.js'
 
 const app = express()
@@ -24,7 +24,7 @@ app.use('/health', (req, res, next) => {
 
 app.use('/api', apiRoutes)
 
-app.use(ErrorHandler) // Errors sink
+app.use(errorHandler) // Errors sink
 
 function start () {
   return new Promise((resolve, reject) => {

@@ -13,6 +13,14 @@ const client = new Client({
   port: process.env.PGPORT
 })
 
+client.on('error', err => {
+  global.logger.err('PgClient failed!', err.stack)
+})
+
+client.on('end', () => {
+  global.logger.info('PgClient disconnected')
+})
+
 let isConnected = false
 
 export async function getPgClient () {

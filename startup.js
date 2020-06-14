@@ -1,6 +1,7 @@
 // Loads .env to Environment without being added to server code
 import dotenv from 'dotenv'
 import './helper/crashHandler.js'
+import './helper/exitHandler.js'
 import './helper/logger.js'
 
 const config = dotenv.config()
