@@ -16,10 +16,6 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('researchpublish', {
-    id: { type: 'int', primaryKey: true, autoIncrement: true },
-    title: { type: 'text', notNull: true },
-    abstract: { type: 'text', notNull: true },
-    status: { type: 'string', length: 255, notNull: true },
     // Add relationships later
     // researchProjectId: {
     //   type: 'int',

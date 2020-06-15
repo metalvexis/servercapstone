@@ -15,11 +15,16 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('notifications', {
+    id: { type: 'string', length: 255, notNull: true },
+    dateNotified: { type: 'timestamp', notNull: true },
+    dateRead: { type: 'timestamp', notNull: true },
+    message: { type: 'text', notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('notifications', { ifExists: true });
 };
 
 exports._meta = {

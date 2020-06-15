@@ -16,7 +16,6 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('milestonesubmissions', {
-    id: { type: 'int', primaryKey: true, autoIncrement: true },
     dateSubmitted: { type: 'timestamp', notNull: true },
     status: { type: 'string', length: 255, notNull: true }
   });

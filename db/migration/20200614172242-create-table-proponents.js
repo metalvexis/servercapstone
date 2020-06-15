@@ -15,11 +15,13 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('proponents', {
+    dateAssigned: { type: 'timestamp', notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('proponents', { ifExists: true });
 };
 
 exports._meta = {

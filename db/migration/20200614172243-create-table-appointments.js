@@ -15,11 +15,17 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('appointments', {
+    concern: { type: 'string', length: 255, notNull: true },
+    prerequisite: { type: 'string', length: 255, notNull: false },
+    feedback: { type: 'string', length: 255, notNull: false },
+    status: { type: 'string', length: 255, notNull: true },
+    dateAssigned: { type: 'timestamp', notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('appointments', { ifExists: true });
 };
 
 exports._meta = {
