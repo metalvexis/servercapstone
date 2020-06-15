@@ -15,11 +15,17 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('milestonechecklists', {
+    id: { type: 'int', primaryKey: true, autoIncrement: true },
+    title: { type: 'string', length: 255, notNull: true },
+    description: { type: 'string', length: 255, notNull: true },
+    category: { type: 'string', length: 255, notNull: false },
+    sequence: { type: 'integer', notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('milestonechecklists', { ifExists: true });
 };
 
 exports._meta = {

@@ -15,11 +15,15 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('milestonesubmissions', {
+    id: { type: 'int', primaryKey: true, autoIncrement: true },
+    dateSubmitted: { type: 'timestamp', notNull: true },
+    status: { type: 'string', length: 255, notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('milestonesubmissions', { ifExists: true });
 };
 
 exports._meta = {

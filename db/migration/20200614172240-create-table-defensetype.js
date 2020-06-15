@@ -15,11 +15,14 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('defensetypes', {
+    id: { type: 'int', primaryKey: true, autoIncrement: true },
+    category: { type: 'string', length: 255, notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('defensetypes', { ifExists: true });
 };
 
 exports._meta = {

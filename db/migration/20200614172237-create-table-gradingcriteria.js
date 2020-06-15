@@ -15,11 +15,16 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('gradingcriteria', {
+    id: { type: 'int', primaryKey: true, autoIncrement: true },
+    rating: { type: 'decimal', notNull: false },
+    percentage: { type: 'decimal', notNull: false },
+    sequence: { type: 'integer', notNull: false }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('gradingcriteria', { ifExists: true });
 };
 
 exports._meta = {

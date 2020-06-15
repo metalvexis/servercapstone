@@ -15,11 +15,15 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('defenseschedules', {
+    id: { type: 'int', primaryKey: true, autoIncrement: true },
+    dateTime: { type: 'timestamp', notNull: true },
+    venue: { type: 'string', length: 255, notNull: true }
+  });
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('defenseschedules', { ifExists: true });
 };
 
 exports._meta = {
