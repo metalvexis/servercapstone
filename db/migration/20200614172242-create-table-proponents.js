@@ -16,6 +16,7 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('proponents', {
+    userid: { type: 'int', primaryKey: true, notNull: true },
     dateAssigned: { type: 'timestamp', notNull: true }
   });
 };

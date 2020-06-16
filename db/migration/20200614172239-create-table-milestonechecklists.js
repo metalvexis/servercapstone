@@ -20,7 +20,7 @@ exports.up = function(db) {
     title: { type: 'string', length: 255, notNull: true },
     description: { type: 'string', length: 255, notNull: true },
     category: { type: 'string', length: 255, notNull: false },
-    sequence: { type: 'integer', notNull: true }
+    sequence: { type: 'int', notNull: true }
   });
 };
 

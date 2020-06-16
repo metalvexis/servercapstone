@@ -17,20 +17,6 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db) {
   return db.createTable('researchsections', {
     id: { type: 'int', primaryKey: true, autoIncrement: true },
-    // Add relationships later
-    // periodId: {
-    //   type: 'int',
-    //   notNull: true,
-    //   foreignKey: {
-    //     name: 'researchsections_periodId_fk',
-    //     table: 'periods',
-    //     rules: {
-    //       onDelete: 'CASCADE',
-    //       onUpdate: 'RESTRICT'
-    //     },
-    //     mapping: 'id'
-    //   }
-    // },
     name: { type: 'string', length: 255, notNull: true }
   });
 };

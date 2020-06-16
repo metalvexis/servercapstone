@@ -18,7 +18,7 @@ exports.up = function(db) {
   return db.createTable('gradingcriteria', {
     rating: { type: 'decimal', notNull: false },
     percentage: { type: 'decimal', notNull: false },
-    sequence: { type: 'integer', notNull: false }
+    sequence: { type: 'int', notNull: false }
   });
 };
 

@@ -16,20 +16,6 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('researchpublish', {
-    // Add relationships later
-    // researchProjectId: {
-    //   type: 'int',
-    //   notNull: true,
-    //   foreignKey: {
-    //     name: 'researchpublish_researchProjectId_fk',
-    //     table: 'researchprojects',
-    //     rules: {
-    //       onDelete: 'CASCADE',
-    //       onUpdate: 'RESTRICT'
-    //     },
-    //     mapping: 'id'
-    //   }
-    // },
     datePublished: { type: 'timestamp', notNull: true }
   });
 };

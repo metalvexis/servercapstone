@@ -16,35 +16,7 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('coordinators', {
-    // Add relationships later
-    // userId: {
-    //   type: 'int',
-    //   notNull: true,
-    //   primaryKey: true,
-    //   foreignKey: {
-    //     name: 'coordinators_userId_fk',
-    //     table: 'users',
-    //     rules: {
-    //       onDelete: 'CASCADE',
-    //       onUpdate: 'RESTRICT'
-    //     },
-    //     mapping: 'id'
-    //   }
-    // },
-    // researchSectionId: {
-    //   type: 'int',
-    //   notNull: true,
-    //   primaryKey: true,
-    //   foreignKey: {
-    //     name: 'coordinators_researchSectionId_fk',
-    //     table: 'users',
-    //     rules: {
-    //       onDelete: 'CASCADE',
-    //       onUpdate: 'RESTRICT'
-    //     },
-    //     mapping: 'id'
-    //   }
-    // },
+    userid: { type: 'int', primaryKey: true, notNull: true },
     dateAssigned: { type: 'timestamp', notNull: true }
   });
 };
